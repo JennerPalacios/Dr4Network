@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<script type="text/javascript" src="js/show-hide.js"></script>
+	<script type="text/javascript" src="js/more_armor.js"></script>
+	<title>Dr4con1um's Survival Server</title>
+</head>
+<body>
+
+<h1>
+	<cr>D</cr><cb>r</cb><cg>4</cg><cr>c</cr><cb>o</cb><cg>n</cg><cr>1</cr><cb>u</cb><cg>m</cg><cgr>'s</cgr> 
+	<cr>S</cr><cb>u</cb><cg>r</cg><cr>v</cr><cb>i</cb><cg>v</cg><cr>a</cr><cb>l</cb> 
+	<cr>S</cr><cb>e</cb><cg>r</cg><cr>v</cr><cb>e</cb><cg>r</cg><br />
+	<span style="font-size: 0.5em; color: #555;">( <span style="font-size: 0.9em;"> Vanilla Minecraft v1.15.2 </span> )</span>
+</h1>
+
+<fieldset style="padding: 0 2em 2em 0.5em">
+	<legend>QUICK INFO</legend>
+	<ul>
+		<li>
+			When you <b>die</b> you will drop a chest. You will have <b>10 minutes</b> to pickup the items; 
+			if you don't make it in time, the chest will disappear. Click the chest in order to pickup the items; 
+			The items will be equiped (if any) and will return to the same order you had them, prior to dying.
+		</li>
+		<li>
+			Player <b>backpacks</b> available. You <b>cannot</b> drop the backpack; you can move backpack around to a different 
+			slot by opening your inventory; if you put it where an item is, the item will go inside the backpack, 
+			you can also place items in your backpack by dropping them into the slot where the backpack is. 
+			Rightclick the backpack to open it, if in the inventory, you can also open the backpack by rightclick it 
+			if you have it in the hotbar.
+		</li>
+		<li>
+			More craftable armors available, with special effects:<br />
+			<ul>
+				<li>
+					Titan Armor (<a id="titan" href="javascript: show('titan')">show effects</a> | <a href="#armor">crafting</a>)
+					<div id="titan-armor" class="hidden">
+						<canvas id="titanArrow" width="10" height="20"></canvas>
+						<b>Item Ability:</b> <code>Health</code>
+						<p>
+							Increases max health by 2.
+						</p>
+						<b>Full set bonus:</b> <code>Resistance</code>
+						<p>
+							Gives <b>Resistance I</b> for ten seconds after killing a mob.
+						</p>
+					</div>
+				</li>
+				<li>
+					Emerald Armor (<a id="emerald" href="javascript: show('emerald')">show effects</a> | <a href="#armor">crafting</a>)
+					<div id="emerald-armor" class="hidden">
+						<canvas id="emeraldArrow" width="10" height="20"></canvas>
+						<b>Item Ability:</b> <code>Emerald Blood</code>
+						<p>
+							Every 50 emerald ores mined will increase max health by 2.<br /><br />
+							Max: 10 health per armor piece.
+						</p>
+					</div>
+				</li>
+				<li>
+					Speedster Armor (<a id="speedster" href="javascript: show('speedster')">show effects</a> | <a href="#armor">crafting</a>)
+					<div id="speedster-armor" class="hidden">
+						<canvas id="speedsterArrow" width="10" height="20"></canvas>
+						<b>Item Ability:</b> <code>Speed</code>
+						<p>
+							Increases max health by 20%.
+						</p>
+						<b>Full set bonus:</b> <code>Retreat</code>
+						<p>
+							Gives <b>Speed II</b> for five seconds when taking damage.
+						</p>
+					</div>
+				</li>
+				<li>
+					Experience Armor (<a id="experience" href="javascript: show('experience')">show effects</a> | <a href="#armor">crafting</a>)
+					<div id="experience-armor" class="hidden">
+						<canvas id="experienceArrow" width="10" height="20"></canvas>
+						<b>Full set bonus:</b> <code>Experience</code>
+						<p>
+							Recieve double <code>experience</code> from mining and killing mobs.
+						</p>
+					</div>
+				</li>
+				<li>
+					Miner Armor (<a id="miner" href="javascript: show('miner')">show effects</a> | <a href="#armor">crafting</a>)
+					<div id="miner-armor" class="hidden">
+						<canvas id="minerArrow" width="10" height="20"></canvas>
+						<b>Full set bonus:</b> <code>Haste</code>
+						<p>
+							Gives <code>Haste II</code> for five seconds after mining a block.
+						</p>
+					</div>
+				</li>
+				<li>
+					Nether Armor (<a id="nether" href="javascript: show('nether')">show effects</a> | <a href="#armor">crafting</a>)
+					<div id="nether-armor" class="hidden">
+						<canvas id="netherArrow" width="10" height="20"></canvas>
+						<b>Item Ability:</b> <code>Bane of the Nether</code>
+						<p>
+							Gives +10% damage against <code>Magma Cubes</code>, <code>Zombie Pigmen</code>, <code>Ghasts</code>, 
+							<code>Blazes</code>, and <code>Wither Skeletons</code>.
+						</p>
+						<b>Full set bonus:</b> <code>Nether King</code>
+						<p>
+							Gives <code>Fire Resistance</code> while in the <code>Nether</code>.<br />
+							
+							Increases max health by 20 while in the <code>Nether</code>.<br />
+							
+							Deal +100% damage while in the <code>Nether</code>.
+						</p>
+					</div>
+				</li>
+				<li>
+					End Armor (<a id="end" href="javascript: show('end')">show effects</a> | <a href="#armor">crafting</a>)
+					<div id="end-armor" class="hidden">
+						<canvas id="endArrow" width="10" height="20"></canvas>
+						<b>Item Ability:</b> <code>Bane of the End</code>
+						<p>
+							Gives +10% damage against <code>Endermen</code>, <code>Endermites</code>, and <code>Ender Dragons</code>.
+						</p>
+						<b>Full set bonus:</b> <code>End King</code>
+						<p>
+							Teleport with <code>Sneack</code>+<code>RightClick</code>, while holding an item(sword).
+						</p>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<b>Pet-wolves</b> are able to level up; they gains more health and strenght as a player does through killing mobs.
+		</li>
+		<li>
+			If you find a spawner in a dungeon, and you want to take it home in order to create your own XP-farm, 
+			you can mine it with a <i>Silk Touch</i> <i>Pickaxe</i>.
+		</li>
+		<li>
+			There are <b>shops</b> available near spawn, feel free to stop-by and purchase some items, gears, and weapons. 
+			You can also sell your excess items like <i>Cobblestone</i>, etc.
+		</li>
+</fieldset>
+
+
+<fieldset>
+	<legend>Home</legend>
+	
+	Set your home with:
+	<code>/setHome</code>
+	
+	You can add more homes (max 4), if you want to have another home across the map:
+	<code>/setHome <i>&lt;homeName&gt; &lt;description&gt;</i></code>
+	
+	Teleport home:
+	<code>/home &nbsp; &nbsp; <or>or</or> &nbsp; &nbsp; /home <i>&lt;homeName&gt;</i></code>
+</fieldset>
+
+<fieldset>
+	<legend>Warping/Teleporting</legend>
+	
+	Set your private warp (max 5):
+	<code>/warp pcreate <i>&lt;locationName&gt;</i></code>
+	
+	See available warps (public and private)
+	<code>/warp list</code>
+	
+	Share warp with other players:
+	<code>/warp invite <i>&lt;player&gt;</i> <i>&lt;locationName&gt;</i></code>
+	
+	Stop sharing warp with other players:
+	<code>/warp unInvite <i>&lt;player&gt;</i> <i>&lt;locationName&gt;</i></code>
+</fieldset>
+
+<fieldset>
+	<legend>XP Deposit</legend>
+	
+	Deposit your <b>XP/Levels</b> before heading into dangerous areas
+	<code>/xpd d <i>&lt;amount&gt;</i></code>
+	
+	Withdraw XP/Levels in order to use for enchantment
+	<code>/xpd w <i>&lt;amount&gt;</i></code>
+	
+	Check your XP/Levels balance:
+	<code>/xpd b</code>
+</fieldset>
+
+<fieldset>
+	<legend><a name="armor">More Armor - Crafting</a></legend>
+	
+	Items that can be crafted using regular Minecraft items, and compacted versions of the items:<br /><br />
+	
+	Titan Armor: uses regular <b>Iron Block</b><br />
+	<img src="img/titan.jpg" /><br /><br />
+	
+	Emerald Armor: uses regular <b>Emerald Block</b><br />
+	<img src="img/emerald.jpg" /><br /><br />
+	
+	Speedster Armor: uses <b>Compacted Sugar Cane</b>, from Sugar Cane<br />
+	<img src="img/speedster.jpg" /><br /><br />
+	
+	Experience Armor: uses regular <b>Lapis Lazuli Block</b><br />
+	<img src="img/experience.jpg" /><br /><br />
+	
+	Miner Armor: uses <b>Compacted Coal</b>, from Cobblestone<br />
+	<img src="img/miner.jpg" /><br /><br />
+	
+	Nether Armor: uses <b>Compacted Netherrack</b>, from Netherrack<br />
+	<img src="img/nether.jpg" /><br /><br />
+	
+	End Armor: uses <b>Compacted End Stone</b>, from End Stone<br />
+	<img src="img/end.jpg" /><br /><br />
+	
+	<hr />
+	
+	<b>Compacted Items/Blocks</b>:<br />
+	<img src="img/compact_01.jpg" /><br />
+	<img src="img/compact_02.jpg" />
+	
+</fieldset>
+
+<fieldset>
+	<legend>Grief Prevention</legend>
+	<ul>
+		<li>
+			Prevents other players from:<br />
+				- Destroying personal stuff (builds)<br />
+				- Stealing stuff (food, items in chest)<br />
+				- Killing animals (farm animals and pets)<br />
+				- Disables <i>PvP</i> in claimed areas (public and private)<br />
+		</li>
+		<li>
+			It also enables collaboration for building together, such as a city, a room inside your home, etc.
+		</li>
+		<li>
+			To start claiming land you will need to get a <i>Golden Shovel</i>.
+		</li>
+		<li>
+			You can also place a chest in order to claim a small box around the chest; chest will not be accessible by anyone, only its owner.
+		</li>
+		<li>
+			You can equip a regular <i>Stick</i> in order to see the borders of a claim.
+		</li>
+	</ul>
+	
+	Abandom claim standing on:
+	<code>/AbandonClaim</code>
+	
+	Give access to another player, <or>or</or> remove access from another player:
+	<code>/Trust <i>&lt;player&gt;</i> &nbsp; &nbsp; <or>or</or> &nbsp; &nbsp; /UnTrust <i>&lt;player&gt;</i></code>
+	
+	Player able to use only mechanics (buttons/levers/beds) and below:
+	<code>/AccessTrust <i>&lt;player&gt;</i></code>
+	
+	Player able to use only blocks and pets (cranfting/chests/animals) and below:
+	<code>/ContainerTrust <i>&lt;player&gt;</i></code>
+	
+	Put shovel into claim within a claim for collaborations:
+	<code>/SubDivideClaims</code>
+	
+	Put shovel back in basic claims mode:
+	<code>/BasicClaims</code>
+	
+	Delete ALL claims:
+	<code>/AbandonAllClaims</code>
+	
+	List all claims:
+	<code>/ClaimsList</code>
+</fieldset>
+
+<fieldset style="padding: 0 2em 2em 0.5em">
+	<legend>Miscellaneous | Other Plugins</legend>
+	<ul>
+		<li>
+			Tree Capitator, using <i>Axe</i> only
+		</li>
+		<li>
+			Drop Regulator, customized drops per certain mobs
+		</li>
+		<li>
+			Anti Spam, sends warning, mute, kick, and then <i>ban</i> abusers
+		</li>
+		<li>
+			Anti CommandSpam, sends warning, mute, kick, and then <i>ban</i> abusers
+		</li>
+		<li>
+			Anti Hax | Anti X-Ray Mods | Anti X-Ray Textures<br />
+			- X-Ray detector, path detector, proximity detector<br />
+			- Cobble vs. Coal vs. Iron vs. Gold vs. Diamond rate calculator<br />
+			- Screenshot Client, Screenshot Chest, Screenshot Inventory<br />
+			- Click counter, RightClick counter<br />
+		</li>
+	</ul>
+</fieldset>
+
+<script>loaded();</script>
+
+</body>
+</html>

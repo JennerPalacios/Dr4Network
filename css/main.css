@@ -1,0 +1,145 @@
+html, body {
+	margin: auto;
+	padding: 0em;
+	font-family: Arial;
+}
+body {
+	width: 50em;
+	font-size: 0.8em;
+	line-height: 1.5em;
+	padding-top: 1em;
+}
+h1 {
+	text-align: center;
+	font-size: 3em;
+}
+or {
+	color: #F00;
+	font-weight: bold;
+}
+cr {
+	color: #F00;
+}
+cb {
+	color: #00F;
+}
+cg {
+	color: #090;
+}
+cgr {
+	color: #999;
+	font-size: 0.8em;
+}
+i {
+	font-style: normal;
+}
+fieldset {
+	margin-bottom: 1em;
+	padding: 1em 2em;
+}
+fieldset legend {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;
+	font-family: Georgia;
+	padding: 0 0.5em 0.2em 0.5em;
+	border-color: #AAA;
+	border-width: 2px;
+	border-style: none solid solid solid;
+}
+fieldset i {
+	font-weight: bold;
+	background: #DFDFDF;
+	display: inline-block;
+	padding: 0 5px;
+}
+fieldset ul li {
+	margin-bottom: 1em;
+}
+.hidden {
+	display: none;
+}
+.display {
+	display: block;
+}
+
+/* DIV INSIDE UL */
+fieldset ul li ul {
+	margin: 0 0 0 1em;
+	padding: 0;
+}
+fieldset ul li ul li {
+	margin: 0.5em 0;
+	padding: 0;
+}
+fieldset ul li ul li {
+	position: relative;
+}
+fieldset ul li ul li div {
+	z-index: 999;
+	font-family: Tahoma;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 25em;
+	background: #000;
+	border: solid #00F 4px;
+	color: #FFF;
+	padding: 1em 1em 0 1em;
+}
+fieldset ul li ul li div canvas {
+	position: absolute;
+	left: -14px;
+	top: -4px;
+	width: 10px;
+	height: 20px;
+}
+fieldset ul li ul li div b {
+	color: #FF0;
+	font-weight: normal;
+}
+fieldset ul li ul li div code {
+	display: inline;
+	font-weight: bold;
+	color: #FA0;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+fieldset ul li ul li div p {
+	padding: 0;
+	margin: 0 0 1em 0;
+}
+fieldset ul li ul li div p code {
+	color: #FD9;
+}
+fieldset ul li ul li div p b {
+	font-size: 1.1em;
+	display: inline-block;
+	padding: 0 0.2em;
+	background: #200;
+}
+
+
+code {
+	display: block;
+	background: #DDD;
+	margin: 0 0.3em 0.5em 0;
+	padding: 0.3em 0.5em;
+	font-size: 1.3em;
+}
+code i {
+	color: #00F;
+	padding: 0;
+	background: transparent;
+	font-weight: normal;
+}
+a:link {
+	color: #00F;
+}
+a:hover {
+	color: #F00;
+}
+a:active {
+	color: #090;
+}
