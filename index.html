@@ -2,8 +2,6 @@
 <html>
 <head>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
-	<script type="text/javascript" src="show-hide.js"></script>
-	<script type="text/javascript" src="more_armor.js"></script>
 	<title>Dr4con1um's Survival Server</title>
 </head>
 <body>
@@ -188,26 +186,54 @@
 	
 	Items that can be crafted using regular Minecraft items, and compacted versions of the items:<br /><br />
 	
-	Titan Armor: uses regular <b>Iron Block</b><br />
-	<img src="img/titan.jpg" /><br /><br />
+	Titan Armor: uses regular <b>Iron Block</b> (<a id="titan-crafting" href="javascript: show('titan-crafting')">show crafting</a>)
+	<div id="titan-crafting-armor" class="hidden">
+		<img src="img/titan.jpg" />
+	</div>
 	
-	Emerald Armor: uses regular <b>Emerald Block</b><br />
-	<img src="img/emerald.jpg" /><br /><br />
+	<br /><br />
 	
-	Speedster Armor: uses <b>Compacted Sugar Cane</b>, from Sugar Cane<br />
-	<img src="img/speedster.jpg" /><br /><br />
+	Emerald Armor: uses regular <b>Emerald Block</b> (<a id="emerald-crafting" href="javascript: show('emerald-crafting')">show crafting</a>)
+	<div id="emerald-crafting-armor" class="hidden">
+		<img src="img/emerald.jpg" />
+	</div>
 	
-	Experience Armor: uses regular <b>Lapis Lazuli Block</b><br />
-	<img src="img/experience.jpg" /><br /><br />
+	<br /><br />
 	
-	Miner Armor: uses <b>Compacted Coal</b>, from Cobblestone<br />
-	<img src="img/miner.jpg" /><br /><br />
+	Speedster Armor: uses <b>Compacted Sugar Cane</b>, from Sugar Cane (<a id="speedster-crafting" href="javascript: show('speedster-crafting')">show crafting</a>)
+	<div id="speedster-crafting-armor" class="hidden">
+		<img src="img/speedster.jpg" />
+	</div>
 	
-	Nether Armor: uses <b>Compacted Netherrack</b>, from Netherrack<br />
-	<img src="img/nether.jpg" /><br /><br />
+	<br /><br />
 	
-	End Armor: uses <b>Compacted End Stone</b>, from End Stone<br />
-	<img src="img/end.jpg" /><br /><br />
+	Experience Armor: uses regular <b>Lapis Lazuli Block</b> (<a id="experience-crafting" href="javascript: show('experience-crafting')">show crafting</a>)
+	<div id="experience-crafting-armor" class="hidden">
+		<img src="img/experience.jpg" />
+	</div>
+	
+	<br /><br />
+	
+	Miner Armor: uses <b>Compacted Coal</b>, from Cobblestone (<a id="miner-crafting" href="javascript: show('miner-crafting')">show crafting</a>)
+	<div id="miner-crafting-armor" class="hidden">
+		<img src="img/miner.jpg" />
+	</div>
+	
+	<br /><br />
+	
+	Nether Armor: uses <b>Compacted Netherrack</b>, from Netherrack (<a id="nether-crafting" href="javascript: show('nether-crafting')">show crafting</a>)
+	<div id="nether-crafting-armor" class="hidden">
+		<img src="img/nether.jpg" />
+	</div>
+	
+	<br /><br />
+	
+	End Armor: uses <b>Compacted End Stone</b>, from End Stone (<a id="end-crafting" href="javascript: show('end-crafting')">show crafting</a>)
+	<div id="end-crafting-armor" class="hidden">
+		<img src="img/end.jpg" />
+	</div>
+	
+	<br /><br />
 	
 	<hr />
 	
@@ -276,22 +302,100 @@
 			Drop Regulator, customized drops per certain mobs
 		</li>
 		<li>
+			Enhanced Crafting, craft enchanted golden apples
+		</li>
+		<li>
+			JustTPA, Tp to another player; player has to accept TP request
+		</li>
+		<li>
+			Single Player Sleep, when a player goes to bed, message appears in public, if someone wants to stop skipping day, they can hit CANCEL
+		</li>
+		<li>
 			Anti Spam, sends warning, mute, kick, and then <i>ban</i> abusers
 		</li>
 		<li>
 			Anti CommandSpam, sends warning, mute, kick, and then <i>ban</i> abusers
 		</li>
 		<li>
-			Anti Hax | Anti X-Ray Mods | Anti X-Ray Textures<br />
+			Anti X-Ray Mods | Anti X-Ray Textures<br />
 			- X-Ray detector, path detector, proximity detector<br />
-			- Cobble vs. Coal vs. Iron vs. Gold vs. Diamond rate calculator<br />
+			- Stone vs. Coal vs. Iron vs. Gold vs. Diamond rate calculator<br />
 			- Screenshot Client, Screenshot Chest, Screenshot Inventory<br />
 			- Click counter, RightClick counter<br />
+		</li>
+		<li>
+			Anti Hacking | Ban players using hacking clients, detects:<br />
+			Blink, Flight, Glide, Jesus, Step, Criticals, Anti-Knockback, FastBow, FastDrop, Reach, Spider, Speed, NoFall, Sneak, vClip, 
+			Timer, FastBreak, FastPlace, Chat spam, FastEat, ElytraFly, Unicode chat, GhostHand​, KillAura, Scaffold
+		</li>
+		<li>
+			Holographic Display, Admin, for custom signs (hd)
+		</li>
+		<li>
+			Animated TabList, Admin, for custom tablist (tl)
+		</li>
+		<li>
+			Ore Announcer, Admin, tracks ores in the world
 		</li>
 	</ul>
 </fieldset>
 
-<script>loaded();</script>
+<script type="text/javascript">
+var armors=["titan","emerald","speedster","experience","miner","nether","end"];
+async function show(id){
+	let boxName = await id+"-armor";
+	let linkId = await document.getElementById(id);
+	let boxId = await document.getElementById(boxName);
+	
+	if(linkId.innerHTML==="show effects" || linkId.innerHTML==="hide effects"){
+		if(linkId.innerHTML==="show effects"){
+			for(let a=0;a<armors.length;a++){
+				document.getElementById(armors[a]).innerHTML= await "show effects";
+				document.getElementById(armors[a]).style.color = "";
+				document.getElementById(armors[a]+"-armor").className= await "hidden";
+			}
+			linkId.innerHTML = "hide effects";
+			linkId.style.color = "#090";
+			boxId.className="display";
+		}
+		
+		else{
+			linkId.innerHTML = "show effects";
+			linkId.style.color = "#00F";
+			boxId.className="hidden";
+		}
+	}
+	else{
+		if(linkId.innerHTML==="show crafting"){
+			for(let a=0;a<armors.length;a++){
+				document.getElementById(armors[a]+"-crafting").innerHTML= await "show crafting";
+				document.getElementById(armors[a]+"-crafting").style.color = "";
+				document.getElementById(armors[a]+"-crafting-armor").className= await "hidden";
+			}
+			linkId.innerHTML = "hide crafting";
+			linkId.style.color = "#090";
+			boxId.className="display";
+		}
+		
+		else{
+			linkId.innerHTML = "show crafting";
+			linkId.style.color = "#00F";
+			boxId.className="hidden";
+		}
+	}
+}
+for(let a=0;a<armors.length;a++){
+	let theCanvas = document.getElementById(armors[a]+"Arrow");
+	let canvasDrawing = theCanvas.getContext("2d");
+	canvasDrawing.beginPath();
+	canvasDrawing.lineTo(0, 10);
+	canvasDrawing.lineTo(10, 0);
+	canvasDrawing.lineTo(10, 20);
+	canvasDrawing.lineTo(0, 10);
+	canvasDrawing.fillStyle="#00F";
+	canvasDrawing.fill();
+}
+</script>
 
 </body>
 </html>
