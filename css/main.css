@@ -134,7 +134,7 @@ code i {
 	background: transparent;
 	font-weight: normal;
 }
-a:link {
+a:link, a:visited {
 	color: #00F;
 }
 a:hover {
