@@ -151,3 +151,9 @@ a:hover {
 a:active {
 	color: #090;
 }
+footer {
+	display: block;
+	padding: 0.5em;
+	text-align: center;
+	background: rgba(255,255,255,0.5);
+}
