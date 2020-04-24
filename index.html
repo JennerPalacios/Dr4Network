@@ -32,7 +32,7 @@
 			More craftable armors available, with special effects:<br />
 			<ul>
 				<li>
-					Titan Armor (<a id="titan" href="javascript: show('titan')">show effects</a> | <a href="#armor">crafting</a>)
+					Titan Armor (<a id="titan" href="javascript: toggle('titan')">show effects</a> | <a href="#armor">crafting</a>)
 					<div id="titan-armor" class="hidden">
 						<canvas id="titanArrow" width="10" height="20"></canvas>
 						<b>Item Ability:</b> <code>Health</code>
@@ -46,7 +46,7 @@
 					</div>
 				</li>
 				<li>
-					Emerald Armor (<a id="emerald" href="javascript: show('emerald')">show effects</a> | <a href="#armor">crafting</a>)
+					Emerald Armor (<a id="emerald" href="javascript: toggle('emerald')">show effects</a> | <a href="#armor">crafting</a>)
 					<div id="emerald-armor" class="hidden">
 						<canvas id="emeraldArrow" width="10" height="20"></canvas>
 						<b>Item Ability:</b> <code>Emerald Blood</code>
@@ -57,7 +57,7 @@
 					</div>
 				</li>
 				<li>
-					Speedster Armor (<a id="speedster" href="javascript: show('speedster')">show effects</a> | <a href="#armor">crafting</a>)
+					Speedster Armor (<a id="speedster" href="javascript: toggle('speedster')">show effects</a> | <a href="#armor">crafting</a>)
 					<div id="speedster-armor" class="hidden">
 						<canvas id="speedsterArrow" width="10" height="20"></canvas>
 						<b>Item Ability:</b> <code>Speed</code>
@@ -71,7 +71,7 @@
 					</div>
 				</li>
 				<li>
-					Experience Armor (<a id="experience" href="javascript: show('experience')">show effects</a> | <a href="#armor">crafting</a>)
+					Experience Armor (<a id="experience" href="javascript: toggle('experience')">show effects</a> | <a href="#armor">crafting</a>)
 					<div id="experience-armor" class="hidden">
 						<canvas id="experienceArrow" width="10" height="20"></canvas>
 						<b>Full set bonus:</b> <code>Experience</code>
@@ -81,7 +81,7 @@
 					</div>
 				</li>
 				<li>
-					Miner Armor (<a id="miner" href="javascript: show('miner')">show effects</a> | <a href="#armor">crafting</a>)
+					Miner Armor (<a id="miner" href="javascript: toggle('miner')">show effects</a> | <a href="#armor">crafting</a>)
 					<div id="miner-armor" class="hidden">
 						<canvas id="minerArrow" width="10" height="20"></canvas>
 						<b>Full set bonus:</b> <code>Haste</code>
@@ -91,7 +91,7 @@
 					</div>
 				</li>
 				<li>
-					Nether Armor (<a id="nether" href="javascript: show('nether')">show effects</a> | <a href="#armor">crafting</a>)
+					Nether Armor (<a id="nether" href="javascript: toggle('nether')">show effects</a> | <a href="#armor">crafting</a>)
 					<div id="nether-armor" class="hidden">
 						<canvas id="netherArrow" width="10" height="20"></canvas>
 						<b>Item Ability:</b> <code>Bane of the Nether</code>
@@ -110,7 +110,7 @@
 					</div>
 				</li>
 				<li>
-					End Armor (<a id="end" href="javascript: show('end')">show effects</a> | <a href="#armor">crafting</a>)
+					End Armor (<a id="end" href="javascript: toggle('end')">show effects</a> | <a href="#armor">crafting</a>)
 					<div id="end-armor" class="hidden">
 						<canvas id="endArrow" width="10" height="20"></canvas>
 						<b>Item Ability:</b> <code>Bane of the End</code>
@@ -186,49 +186,49 @@
 	
 	Items that can be crafted using regular Minecraft items, and compacted versions of the items:<br /><br />
 	
-	Titan Armor: uses regular <b>Iron Block</b> (<a id="titan-crafting" href="javascript: show('titan-crafting')">show crafting</a>)
+	Titan Armor: uses regular <b>Iron Block</b> (<a id="titan-crafting" href="javascript: toggle('titan-crafting')">show crafting</a>)
 	<div id="titan-crafting-armor" class="hidden">
 		<img src="img/titan.jpg" />
 	</div>
 	
 	<br /><br />
 	
-	Emerald Armor: uses regular <b>Emerald Block</b> (<a id="emerald-crafting" href="javascript: show('emerald-crafting')">show crafting</a>)
+	Emerald Armor: uses regular <b>Emerald Block</b> (<a id="emerald-crafting" href="javascript: toggle('emerald-crafting')">show crafting</a>)
 	<div id="emerald-crafting-armor" class="hidden">
 		<img src="img/emerald.jpg" />
 	</div>
 	
 	<br /><br />
 	
-	Speedster Armor: uses <b>Compacted Sugar Cane</b>, from Sugar Cane (<a id="speedster-crafting" href="javascript: show('speedster-crafting')">show crafting</a>)
+	Speedster Armor: uses <b>Compacted Sugar Cane</b>, from Sugar Cane (<a id="speedster-crafting" href="javascript: toggle('speedster-crafting')">show crafting</a>)
 	<div id="speedster-crafting-armor" class="hidden">
 		<img src="img/speedster.jpg" />
 	</div>
 	
 	<br /><br />
 	
-	Experience Armor: uses regular <b>Lapis Lazuli Block</b> (<a id="experience-crafting" href="javascript: show('experience-crafting')">show crafting</a>)
+	Experience Armor: uses regular <b>Lapis Lazuli Block</b> (<a id="experience-crafting" href="javascript: toggle('experience-crafting')">show crafting</a>)
 	<div id="experience-crafting-armor" class="hidden">
 		<img src="img/experience.jpg" />
 	</div>
 	
 	<br /><br />
 	
-	Miner Armor: uses <b>Compacted Cobblestone</b>, from Cobblestone (<a id="miner-crafting" href="javascript: show('miner-crafting')">show crafting</a>)
+	Miner Armor: uses <b>Compacted Cobblestone</b>, from Cobblestone (<a id="miner-crafting" href="javascript: toggle('miner-crafting')">show crafting</a>)
 	<div id="miner-crafting-armor" class="hidden">
 		<img src="img/miner.jpg" />
 	</div>
 	
 	<br /><br />
 	
-	Nether Armor: uses <b>Compacted Netherrack</b>, from Netherrack (<a id="nether-crafting" href="javascript: show('nether-crafting')">show crafting</a>)
+	Nether Armor: uses <b>Compacted Netherrack</b>, from Netherrack (<a id="nether-crafting" href="javascript: toggle('nether-crafting')">show crafting</a>)
 	<div id="nether-crafting-armor" class="hidden">
 		<img src="img/nether.jpg" />
 	</div>
 	
 	<br /><br />
 	
-	End Armor: uses <b>Compacted End Stone</b>, from End Stone (<a id="end-crafting" href="javascript: show('end-crafting')">show crafting</a>)
+	End Armor: uses <b>Compacted End Stone</b>, from End Stone (<a id="end-crafting" href="javascript: toggle('end-crafting')">show crafting</a>)
 	<div id="end-crafting-armor" class="hidden">
 		<img src="img/end.jpg" />
 	</div>
@@ -238,8 +238,15 @@
 	<hr />
 	
 	<b>Compacted Items/Blocks</b>:<br />
-	<img src="img/compact_01.jpg" /><br />
-	<img src="img/compact_02.jpg" />
+	<img src="img/compact_01.jpg" style="display: block; margin: auto;" /><br />
+	<img src="img/compact_02.jpg" style="display: block; margin: auto;" />
+	
+</fieldset>
+
+<fieldset>
+	<legend><a name="armor">More Crafting Recipes</a></legend>
+	
+	<img src="img/c_all.jpg" style="display: block; margin: auto;"/>
 	
 </fieldset>
 
@@ -290,6 +297,9 @@
 	
 	List all claims:
 	<code>/ClaimsList</code>
+	
+	List all trusted members and their levels:
+	<code>/TrustList</code>
 </fieldset>
 
 <fieldset style="padding: 0 2em 2em 0.5em">
@@ -348,7 +358,7 @@
 
 <script type="text/javascript">
 var armors=["titan","emerald","speedster","experience","miner","nether","end"];
-async function show(id){
+async function toggle(id){
 	let boxName = await id+"-armor";
 	let linkId = await document.getElementById(id);
 	let boxId = await document.getElementById(boxName);
